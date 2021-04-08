@@ -21,6 +21,9 @@
 {% if renew_lifetime is defined %}
 	renew_lifetime = {{ renew_lifetime }}
 {% endif %}
+{% if clockslew is defined %}
+	clockslew = {{ clockslew }}
+{% endif %}
 {% if not use_dns | bool %}
 
 [realms]
