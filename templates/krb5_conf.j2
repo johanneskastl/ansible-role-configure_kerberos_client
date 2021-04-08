@@ -1,0 +1,21 @@
+#
+# {{ ansible_managed }}
+#
+[libdefaults]
+	default_realm = {{ kerberos_realm }}
+	dns_lookup_realm = false
+{% if use_dns | bool %}
+	dns_lookup_kdc = true
+{% else %}
+	dns_lookup_kdc = false
+
+[realms]
+	{{ kerberos_realm }} = {
+		kdc = {{ kdc_server }}.{{ kerberos_dns_domain | default(kerberos_realm | lower) }}
+		admin_server = {{ admin_server }}.{{ kerberos_dns_domain | default(kerberos_realm | lower) }}
+	}
+{% endif %}
+
+[domain_realm]
+	.{{ kerberos_dns_domain | default(kerberos_realm | lower) }} = {{ kerberos_realm }}
+	{{ kerberos_dns_domain | default(kerberos_realm | lower) }} = {{ kerberos_realm }}
