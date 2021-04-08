@@ -6,3 +6,4 @@ path_to_krb5_conf: '/etc/krb5.conf'
 
 # settings for krb5.conf
 kerberos_realm: 'TRAINING.B1-SYSTEMS.DE'
+use_dns: true
