@@ -1,0 +1,7 @@
+---
+# configure_kerberos_clients/vars/vars_Debian.yml
+
+# packages to be installed
+kerberos_client_packages:
+  - 'krb5-user'
+  - 'krb5-doc'
