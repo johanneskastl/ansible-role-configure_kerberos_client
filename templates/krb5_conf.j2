@@ -9,6 +9,9 @@
 {% else %}
 	dns_lookup_kdc = false
 {% endif %}
+{% if forwardable is defined %}
+	forwardable = {{ forwardable }}
+{% endif %}
 {% if not use_dns | bool %}
 
 [realms]
