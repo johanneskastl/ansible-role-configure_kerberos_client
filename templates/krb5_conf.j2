@@ -18,6 +18,9 @@
 {% if ticket_lifetime is defined %}
 	ticket_lifetime = {{ ticket_lifetime }}
 {% endif %}
+{% if renew_lifetime is defined %}
+	renew_lifetime = {{ renew_lifetime }}
+{% endif %}
 {% if not use_dns | bool %}
 
 [realms]
