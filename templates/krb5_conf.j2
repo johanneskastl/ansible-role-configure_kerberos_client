@@ -24,6 +24,9 @@
 {% if clockslew is defined %}
 	clockslew = {{ clockslew }}
 {% endif %}
+{% if default_keytab_name is defined %}
+	default_keytab_name = {{ default_keytab_name }}
+{% endif %}
 {% if not use_dns | bool %}
 
 [realms]
