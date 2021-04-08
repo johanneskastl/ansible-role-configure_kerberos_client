@@ -1,0 +1,7 @@
+---
+# configure_kerberos_kdcs/tasks/install_packages.yml
+
+- name: 'Install Kerberos client packages'
+  package:
+    name: "{{ kerberos_client_packages }}"
+    state: 'present'
