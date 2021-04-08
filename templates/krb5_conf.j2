@@ -12,6 +12,9 @@
 {% if forwardable is defined %}
 	forwardable = {{ forwardable }}
 {% endif %}
+{% if proxiable is defined %}
+	proxiable = {{ proxiable }}
+{% endif %}
 {% if not use_dns | bool %}
 
 [realms]
