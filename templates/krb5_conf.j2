@@ -15,6 +15,9 @@
 {% if proxiable is defined %}
 	proxiable = {{ proxiable }}
 {% endif %}
+{% if ticket_lifetime is defined %}
+	ticket_lifetime = {{ ticket_lifetime }}
+{% endif %}
 {% if not use_dns | bool %}
 
 [realms]
