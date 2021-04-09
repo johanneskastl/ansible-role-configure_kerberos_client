@@ -3,7 +3,7 @@
 #
 [libdefaults]
 	default_realm = {{ kerberos_realm }}
-	dns_lookup_realm = false
+	dns_lookup_realm = {{ dns_lookup_realm }}
 {% if use_dns | bool %}
 	dns_lookup_kdc = true
 {% else %}
