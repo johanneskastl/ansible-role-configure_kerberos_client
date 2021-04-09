@@ -9,6 +9,10 @@
 
 - name: 'Install packages'
   include_tasks: install_packages.yml
+  tags:
+    - 'installation'
 
 - name: 'Configure the krb5.conf'
   include_tasks: configure_the_krb5_conf.yml
+  tags:
+    - 'configuration'
