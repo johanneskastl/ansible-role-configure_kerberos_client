@@ -26,17 +26,15 @@
 {% if canonicalize is defined %}
 	canonicalize = {{ canonicalize }}
 {% endif %}
-{% if not use_dns | bool %}
 
 [realms]
 	{{ kerberos_realm }} = {
 		kdc = {{ kdc_server }}.{{ kerberos_dns_domain | default(kerberos_realm | lower) }}
 		admin_server = {{ admin_server }}.{{ kerberos_dns_domain | default(kerberos_realm | lower) }}
-{% if master_kdc_server is defined and not use_dns | bool %}
+{% if master_kdc_server is defined %}
 		master-kdc = {{ master_kdc_server }}
 {% endif %}
 	}
-{% endif %}
 
 [domain_realm]
 	.{{ kerberos_dns_domain | default(kerberos_realm | lower) }} = {{ kerberos_realm }}
