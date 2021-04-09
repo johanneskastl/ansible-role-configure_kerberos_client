@@ -30,7 +30,9 @@
 [realms]
 	{{ kerberos_realm }} = {
 {% if kdc_server is defined %}
-		kdc = {{ kdc_server }}.{{ kerberos_dns_domain | default(kerberos_realm | lower) }}
+{% for entry in kdc_server %}
+		kdc = {{ entry }}.{{ kerberos_dns_domain | default(kerberos_realm | lower) }}
+{% endfor %}
 {% endif %}
 		admin_server = {{ admin_server }}.{{ kerberos_dns_domain | default(kerberos_realm | lower) }}
 {% if master_kdc_server is defined %}
