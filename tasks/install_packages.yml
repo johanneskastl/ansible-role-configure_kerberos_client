@@ -5,3 +5,5 @@
   package:
     name: "{{ kerberos_client_packages }}"
     state: 'present'
+  tags:
+    - 'installation'
