@@ -35,6 +35,9 @@
 {% endfor %}
 {% endif %}
 		admin_server = {{ admin_server }}.{{ kerberos_dns_domain | default(kerberos_realm | lower) }}
+{% if kpasswd_server is defined %}
+		kpasswd_server = {{ kpasswd_server }}
+{% endif %}
 {% if master_kdc_server is defined %}
 		master-kdc = {{ master_kdc_server }}
 {% endif %}
