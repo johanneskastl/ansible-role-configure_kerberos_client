@@ -2,7 +2,9 @@
 # {{ ansible_managed }}
 #
 [libdefaults]
+{% if not dns_lookup_realm | bool %}
 	default_realm = {{ kerberos_realm }}
+{% endif %}
 	dns_lookup_realm = {{ dns_lookup_realm }}
 	dns_lookup_kdc = {{ dns_lookup_kdc }}
 {% if forwardable is defined %}
