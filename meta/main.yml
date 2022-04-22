@@ -1,5 +1,6 @@
 galaxy_info:
   role_name: 'configure_kerberos_clients'
+  namespace: 'johanneskastl'
   author: 'Johannes Kastl'
   description: 'Configure a Kerberos client'
   company: 'B1 Systems GmbH'
