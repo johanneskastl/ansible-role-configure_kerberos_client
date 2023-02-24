@@ -25,7 +25,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: 'johanneskastl.configure_kerberos_clients' }
+         - role: 'johanneskastl.configure_kerberos_clients'
 
 License
 -------
