@@ -1,3 +1,5 @@
+![Ansible Lint](https://github.com/johanneskastl/ansible-role-configure_kerberos_clients/workflows/Ansible%20Lint/badge.svg)
+
 configure_kerberos_clients
 =========
 
