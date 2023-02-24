@@ -2,17 +2,17 @@
 # configure_kerberos_clients/tasks/main.yml
 
 - name: "Load variables"
-  include_vars: "{{ item }}"
+  ansible.builtin.include_vars: "{{ item }}"
   with_first_found:
     - "vars_{{ ansible_distribution }}.yml"
     - "vars_{{ ansible_os_family }}.yml"
 
 - name: 'Install packages'
-  include_tasks: install_packages.yml
+  ansible.builtin.include_tasks: install_packages.yml
   tags:
     - 'installation'
 
 - name: 'Configure the krb5.conf'
-  include_tasks: configure_the_krb5_conf.yml
+  ansible.builtin.include_tasks: configure_the_krb5_conf.yml
   tags:
     - 'configuration'
